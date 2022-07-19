@@ -10,25 +10,26 @@ namespace BIT502_5064102_EmmaBaumbach_Assignment1Task1
     {
         static void UnknownCommand(string sel)
         {
-            Console.WriteLine("\n Unknown command: " + sel);
+            Console.WriteLine("\n      *** Unknown command: \"" + sel + "\" ***");
         }
-        static void MembershipDetails()
+        static void MembershipRates()
         {
-            Console.Write("\n Please select which membership you'd like to view: \n\n [1] Basic\n [2] Regular\n [3] Premium\n [4] Exit application\n ");
+            Console.WriteLine("       ~ Membership Rates ~");
+            Console.Write("\n Please select which membership you'd like to view: \n\n [1] Basic\n [2] Regular\n [3] Premium\n\n [4] Exit application\n ");
             string sel = (Console.ReadLine());
             float[] rates = { 10.00f, 15.00f, 20.00f };
 
             if (sel == "1") // basic membership
             {
-                Console.WriteLine("\n Basic Membership\n\n Weekly $" + rates[0] + "\n Monthly $" + rates[0] * 4);
+                Console.WriteLine("\n       ~ Basic Membership ~\n\n        Weekly $" + rates[0] + "\n        Monthly $" + rates[0] * 4);
             }
             else if (sel == "2") // regular membership
             {
-                Console.WriteLine("\n Regular Membership\n\n Weekly $" + rates[1] + "\n Monthly $" + rates[1] * 4);
+                Console.WriteLine("\n       ~ Regular Membership ~\n\n        Weekly $" + rates[1] + "\n        Monthly $" + rates[1] * 4);
             }
             else if (sel == "3") // premium membership
             {
-                Console.WriteLine("\n Premium Membership\n\n Weekly $" + rates[2] + "\n Monthly $" + rates[2] * 4);
+                Console.WriteLine("\n       ~ Premium Membership ~\n\n        Weekly $" + rates[2] + "\n        Monthly $" + rates[2] * 4);
             }
             else if (sel == "4") // exit application
             {
@@ -41,10 +42,12 @@ namespace BIT502_5064102_EmmaBaumbach_Assignment1Task1
         }
         static void CalculateBMI()
         {
-            Console.Write("\n Please enter your height in metres: (e.g. 1.6)\n ");
+            Console.WriteLine("       ~ Calculate BMI ~");
+            Console.Write("\n Please enter your height in metres: (e.g. 1.63)\n ");
             float userHeight = Convert.ToSingle(Console.ReadLine());
             Console.Clear();
-            Console.Write("\n Please enter your weight in kilograms: (e.g. 56)\n ");
+            Console.WriteLine("       ~ Calculate BMI ~");
+            Console.Write("\n Please enter your weight in kilograms: (e.g. 54.7)\n ");
             float userWeight = Convert.ToSingle(Console.ReadLine());
             Console.Clear();
             float userBMI = userWeight / (userHeight * userHeight);
@@ -67,6 +70,7 @@ namespace BIT502_5064102_EmmaBaumbach_Assignment1Task1
             {
                 BMI_output = "Obese";
             }
+            Console.WriteLine("       ~ Calculate BMI ~");
             Console.WriteLine("\n Body Mass Index (BMI): " + userBMI + "\n You are considered \"" + BMI_output + "\"");
         }
 
@@ -75,10 +79,9 @@ namespace BIT502_5064102_EmmaBaumbach_Assignment1Task1
                 while (true)
                 {
                     Console.Clear();
-                    string one = "         City Gym Membership Form";
-                    string two = "\n Please select one of the following options: \n\n [1] Calculate your BMI\n [2] View membership rates\n [3] Exit application";               
-                    Console.WriteLine(one + two);
-
+                    Console.WriteLine("       ~ City Gym Membership Form ~");
+                    Console.WriteLine("\n Please select one of the following options: \n\n [1] Calculate your BMI\n [2] View membership rates\n\n [3] Exit application");               
+                    
                     string sel = Console.ReadLine();
 
                     if (sel == "1") // Calculate BMI
@@ -89,8 +92,7 @@ namespace BIT502_5064102_EmmaBaumbach_Assignment1Task1
                     else if (sel == "2") // Membership Details
                     {
                         Console.Clear();
-                        MembershipDetails();
-                        
+                        MembershipRates();                      
                     }
                     else if (sel == "3") // Exit Application
                     {
