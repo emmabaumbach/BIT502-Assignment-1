@@ -8,6 +8,10 @@ namespace BIT502_5064102_EmmaBaumbach_Assignment1Task1
 {
     class Program
     {
+        static void UnknownCommand(string sel)
+        {
+            Console.WriteLine("\n Unknown command: " + sel);
+        }
         static void MembershipDetails()
         {
             Console.Write("\n Please select which membership you'd like to view: \n\n [1] Basic\n [2] Regular\n [3] Premium\n [4] Exit application\n ");
@@ -32,7 +36,7 @@ namespace BIT502_5064102_EmmaBaumbach_Assignment1Task1
             }
             else
             {
-                Console.WriteLine("\n Unknown command: " + sel);
+                UnknownCommand(sel);
             }
         }
         static void CalculateBMI()
@@ -75,26 +79,26 @@ namespace BIT502_5064102_EmmaBaumbach_Assignment1Task1
                     string two = "\n Please select one of the following options: \n\n [1] Calculate your BMI\n [2] View membership rates\n [3] Exit application";               
                     Console.WriteLine(one + two);
 
-                    string opt = Console.ReadLine();
+                    string sel = Console.ReadLine();
 
-                    if (opt == "1") // Calculate BMI
+                    if (sel == "1") // Calculate BMI
                     {
                         Console.Clear();
                         CalculateBMI();
                     }
-                    else if (opt == "2") // Membership Details
+                    else if (sel == "2") // Membership Details
                     {
                         Console.Clear();
                         MembershipDetails();
                         
                     }
-                    else if (opt == "3") // Exit Application
+                    else if (sel == "3") // Exit Application
                     {
                         Environment.Exit(0);
                     }
                     else
                     {
-                        Console.WriteLine("\n Unknown command: " + opt);
+                        UnknownCommand(sel);
                     }
                     {
                         Console.WriteLine("\n\n Press enter to return to the main menu. ");
